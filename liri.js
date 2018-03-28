@@ -40,7 +40,7 @@ switch (command) {
 function helpText() {
     console.log('\nWelcome to LIRI! We have the following commands available:');
     console.log("'my-tweets': displays your last 20 tweets from Twitter");
-    console.log("'spotify-this-song': Displays info of a searched song from Spotify") ;
+    console.log("'spotify-this-song': Displays info of a searched song from Spotify");
     console.log("'do-what-it-says': Runs command(s) from random.txt");
     console.log("'help': Display this help text again, in case you forgot");
 }
@@ -48,12 +48,12 @@ function helpText() {
 function loadTweets() {
     var params = {
         screen_name: 'mrbulldops22',
-        count: 4,
+        count: 20
     }
 
-    twitter.get('statuses/user_timeline', params, function(error, data, response) {
-        if(error) {
-            console.log('there was an error');
+    twitter.get('statuses/user_timeline', params, function (error, data, response) {
+        if (error) {
+            console.log('twitter query error');
             process.exit(1);
         }
 
@@ -62,11 +62,26 @@ function loadTweets() {
             console.log(moment(date).format("MM-DD-YYYY HH:mm") + " - " + data[i].text);
         }
     });
-    
+
 }
 
 function spotifySong() {
+    if (process.argv.length < 4) {
+        console.log('No argument given for query');
+        process.exit(1);
+    }
 
+    var song = process.argv[3].trim();
+
+    spotify.search({
+        type: 'track',
+        query: song,
+        count: 1
+    }).then(function (response) {
+        console.log(response.tracks.items[0].artists[0].name + " - " + response.tracks.items[0].name + " || " + response.tracks.items[0].album.name + " (" + response.tracks.items[0].external_urls.spotify + ")");
+    }).catch(function (error) {
+        console.log(error);
+    });
 }
 
 function doWhatItSays() {
@@ -74,5 +89,9 @@ function doWhatItSays() {
 }
 
 function movieThis() {
+
+}
+
+function logThis() {
 
 }

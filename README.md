@@ -48,3 +48,5 @@ jkrowden
 ##Acknowledgement
 I'd like to thank Mr. Bulldops for his contribution to the project
 '@bulldops22
+
+I would also like to thank anyone who views or actually uses this project in anyway. Attention is always nice...

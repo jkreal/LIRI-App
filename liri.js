@@ -26,7 +26,7 @@ start();
 function start() {
 
     logThis();
-    
+
     switch (command) {
         case 'my-tweets':
             loadTweets();
@@ -87,7 +87,7 @@ function loadTweets(username) {
 
         for (var i = 0; i < data.length; i++) {
             var date = new Date(data[i].created_at);
-            console.log(moment(date).format("MM-DD-YYYY HH:mm") + " - " + data[i].text );
+            console.log(moment(date).format("MM-DD-YYYY HH:mm") + " - " + data[i].text);
             sleep(50);
         }
         console.log("\n");
@@ -196,23 +196,26 @@ function history() {
     });
 
     var lines = [];
-    var count = 0;
     read.on('line', function (line) {
-        count++;
-        if (count < 20) {
-            lines.push(line);
+        lines.push(line);
+    });
+
+    var lineArray = [];
+    read.on('close', function (line) {
+        for (var i = lines.length - 1; i > lines.length - 20; --i) {
+            lineArray.push(lines[i]);
+        }
+
+        for (var i = lines.length - 1; i > 0; --i) {
+            console.log(lineArray[i]);
         }
     });
 
-    read.on('close', function (line) {
-        for (var i = lines.length - 1; i > 0; --i) {
-            console.log(lines[i]);
-        }
-    });
 }
 
 function logThis() {
-    fs.appendFile("log.txt", command + " " + ((!argument) ? '' : argument) + "\n", function (error) {
+    let timestamp = moment().format("MMM-D-YYYY @ HH:mm:ss")
+    fs.appendFile("log.txt", timestamp + " >> " +  command + " " + ((!argument) ? '' : "'" + argument + "'") + "\n", function (error) {
         if (error) {
             return console.log(error);
         }

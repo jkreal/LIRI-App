@@ -26,3 +26,41 @@ spotify-this-song "hail to the king"
 do-what-it-says 
 movie-this "Breaking Bad"
 spotify-this-song "hail to the king"
+do-what-it-says 
+movie-this "Breaking Bad"
+spotify-this-song "hail to the king"
+my-tweets random
+my-tweets random
+tweets random
+tweets random
+tweets random
+tweets random
+tweets random
+tweets random
+tweets BarackObama
+tweets BarackObama
+help 
+history 
+history 
+history 
+history 
+history 
+history 
+history 
+history 
+history 
+history 
+history 
+history 
+history 
+history 
+history 
+history 
+history 
+history 
+history 
+history 
+history 
+history 
+history 
+history 

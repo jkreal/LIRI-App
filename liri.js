@@ -1,14 +1,15 @@
 require("dotenv").config();
 
-var fs = require('fs');
-var moment = require("./moment.js");
-var request = require("request");
-var Spotify = require("node-spotify-api");
-var Twitter = require("twitter");
-var keys = require("./keys.js");
+const fs = require('fs');
+const moment = require("./moment.js");
+const request = require("request");
+const Spotify = require("node-spotify-api");
+const Twitter = require("twitter");
+const keys = require("./keys.js");
+const readline = require("readline");
 
-var spotify = new Spotify(keys.spotify);
-var twitter = new Twitter(keys.twitter);
+const spotify = new Spotify(keys.spotify);
+const twitter = new Twitter(keys.twitter);
 
 var command = process.argv[2];
 var argument = process.argv[3];
@@ -25,6 +26,9 @@ function start() {
     switch (command) {
         case 'my-tweets':
             loadTweets();
+            break;
+        case 'tweets':
+            loadTweets(argument);
             break;
         case 'spotify-this-song':
             arguments.length > 0 ? spotifySong(argument) : spotifySong();
@@ -51,17 +55,22 @@ function start() {
 function helpText() {
     console.log('\nWelcome to LIRI! We have the following commands available:');
     console.log("'my-tweets': displays your last 20 tweets from Twitter");
-    console.log("'spotify-this-song': Displays info of a searched song from Spotify");
-    console.log("'do-what-it-says': Runs command(s) from random.txt");
-    console.log("'movie-this' : Gives you info on a movie (surround with quotes if multiple words in title)");
+    console.log("'tweets' : Displays a user's tweet. Parameter: username")
+    console.log("'spotify-this-song': Displays info of a searched song from Spotify. Parameter: song_name");
+    console.log("'do-what-it-says': Runs the command(s) from random.txt");
+    console.log("'movie-this' : Gives you info on a movie (surround with quotes if multiple words in title). Parameter: movie_name");
     console.log("'history' : Shows the last 20 commands that have been entered")
     console.log("'help': Display this help text again, in case you forgot");
 }
 
-function loadTweets() {
+function loadTweets(username) {
     var params = {
         screen_name: 'mrbulldops22',
         count: 20
+    }
+
+    if (arguments.length > 0) {
+        params.screen_name = argument;
     }
 
     twitter.get('statuses/user_timeline', params, function (error, data, response) {
@@ -135,7 +144,6 @@ function movieThis(arguments) {
     }
     else {
         var movie = argument.trim().replace(/ /g, "+").replace(/\"/g, "");
-        console.log(movie);
     }
 
     var options = {
@@ -175,19 +183,23 @@ function movieThis(arguments) {
 }
 
 function history() {
-    fs.readFile("log.txt", "utf8", function (error, data) {
-        if (error) {
-            console.log('log read error');
-        }
 
-        var history = data.split(', ');
-        for (var i = history.length - 1; i > 0; --i) {
-            if (history[i] === 'movie-this' || history[i] === 'spotify-this-song') {
-                console.log(history[i] + " - " + history[i + 1]);
-            }
-            else {
-                console.log(history[i]);
-            }
+    const read = readline.createInterface({
+        input: fs.ReadStream('log.txt')
+    });
+
+    var lines = [];
+    var count = 0;
+    read.on('line', function (line) {
+        count++;
+        if (count < 20) {
+            lines.push(line);
+        }
+    });
+
+    read.on('close', function(line) {
+        for (var i = lines.length - 1; i > 0; --i) {
+            console.log(lines[i]);
         }
     });
 }

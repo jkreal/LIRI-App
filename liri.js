@@ -1,5 +1,6 @@
 require("dotenv").config();
 
+const sleep = require('system-sleep');
 const fs = require('fs');
 const moment = require("./moment.js");
 const request = require("request");
@@ -7,6 +8,7 @@ const Spotify = require("node-spotify-api");
 const Twitter = require("twitter");
 const keys = require("./keys.js");
 const readline = require("readline");
+const Sync = require('sync');
 
 const spotify = new Spotify(keys.spotify);
 const twitter = new Twitter(keys.twitter);
@@ -22,7 +24,9 @@ if (process.argv.length < 3) {
 start();
 
 function start() {
+
     logThis();
+    
     switch (command) {
         case 'my-tweets':
             loadTweets();
@@ -46,11 +50,13 @@ function start() {
             history();
             break;
         default:
-            console.log("Command not found. Available commands:\nmy-tweets\nspotify-this-song\nmovie-this\ndo-what-it-says");
+            console.log("Command " + command + " not found. Available commands:\nmy-tweets\nspotify-this-song\nmovie-this\ndo-what-it-says");
             break;
     }
-}
 
+    sleep(500);
+
+}
 
 function helpText() {
     console.log('\nWelcome to LIRI! We have the following commands available:');
@@ -81,16 +87,17 @@ function loadTweets(username) {
 
         for (var i = 0; i < data.length; i++) {
             var date = new Date(data[i].created_at);
-            console.log(moment(date).format("MM-DD-YYYY HH:mm") + " - " + data[i].text);
+            console.log(moment(date).format("MM-DD-YYYY HH:mm") + " - " + data[i].text );
+            sleep(50);
         }
+        console.log("\n");
     });
 
 }
 
 function spotifySong(song) {
     var songSearch;
-    console.log('command: ' + command);
-    console.log('argument: ' + argument);
+
     if (process.argv.length < 4 && arguments.length === 0) {
         console.log('No argument given for query');
         process.exit(1);
@@ -127,7 +134,7 @@ function doWhatItSays() {
             if (saysTo.length > (i + 1)) {
                 argument = saysTo[i + 1].trim();
             }
-            if (command === 'spotify-this-song' || command === 'movie-this') {
+            if (command === 'spotify-this-song' || command === 'movie-this' || command === 'tweets') {
                 i++;
             }
 
@@ -176,7 +183,7 @@ function movieThis(arguments) {
         console.log(lines);
         console.log("IMDB Rating: " + data.Ratings[0].Value + " || Rotten Tomatoes Rating: " + ((data.Ratings.length > 1) ? data.Ratings[1].Value : 'N/A'));
 
-        console.log(data.Country + " - " + data.Language);
+        console.log(data.Country + " - " + data.Language + "\n");
 
     });
 
@@ -197,7 +204,7 @@ function history() {
         }
     });
 
-    read.on('close', function(line) {
+    read.on('close', function (line) {
         for (var i = lines.length - 1; i > 0; --i) {
             console.log(lines[i]);
         }

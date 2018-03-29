@@ -14,7 +14,7 @@ var command = process.argv[2];
 var argument = process.argv[3];
 
 if (process.argv.length < 3) {
-    console.log('Error: No command given!');
+    helpText();
     process.exit(1);
 }
 
@@ -29,7 +29,7 @@ function start() {
             arguments.length > 0 ? spotifySong(argument) : spotifySong();
             break;
         case 'movie-this':
-            movieThis();
+            arguments.length > 0 ? movieThis(argument) : movieThis();
             break;
         case 'do-what-it-says':
             doWhatItSays();
@@ -49,6 +49,7 @@ function helpText() {
     console.log("'my-tweets': displays your last 20 tweets from Twitter");
     console.log("'spotify-this-song': Displays info of a searched song from Spotify");
     console.log("'do-what-it-says': Runs command(s) from random.txt");
+    console.log("'movie-this' : Gives you info on a movie (surround with quotes if multiple words in title)");
     console.log("'help': Display this help text again, in case you forgot");
 }
 
@@ -121,11 +122,50 @@ function doWhatItSays() {
     });
 }
 
-function parseCommand() {
+function movieThis(arguments) {
 
-}
+    if (process.argv.length < 4 && arguments.length === 0) {
+        console.log('No argument given for query');
+        process.exit(1);
+    }
+    else {
+        var movie = argument.trim().replace(/ /g, "+").replace(/\"/g, "");
+        console.log(movie);
+    }
 
-function movieThis() {
+    var options = {
+        url: 'http://www.omdbapi.com/?t=' + movie + '&apikey=893caa2c',
+        method: 'GET',
+        tomatoes: true,
+        r: 'json'
+    }
+
+    console.log(options.url);
+
+    request(options, function (error, response, body) {
+        if (error) {
+            console.log('ombd query error');
+            process.exit(1);
+        }
+
+        data = JSON.parse(body);
+
+        console.log("\n" + data.Title + " - " + data.Year);
+
+        var lines = '';
+        for(var i = 0; i < data.Title.length + 8; ++i) {
+            lines += '-';
+        }
+
+        console.log(lines);
+        console.log(data.Actors);
+        console.log(data.Plot);
+        console.log(lines);
+        console.log("IMDB Rating: " + data.Ratings[0].Value + " || Rotten Tomatoes Rating: " + ((data.Ratings.length > 1) ?  data.Ratings[1].Value : 'N/A'));
+
+        console.log(data.Country + " - " + data.Language);
+
+    });
 
 }
 

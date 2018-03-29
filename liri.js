@@ -1,5 +1,5 @@
 require("dotenv").config();
-//Still working on do that thing thing
+
 var fs = require('fs');
 var moment = require("./moment.js");
 var request = require("request");
@@ -21,6 +21,7 @@ if (process.argv.length < 3) {
 start();
 
 function start() {
+    logThis();
     switch (command) {
         case 'my-tweets':
             loadTweets();
@@ -37,6 +38,9 @@ function start() {
         case 'help':
             helpText();
             break;
+        case 'history':
+            history();
+            break;
         default:
             console.log("Command not found. Available commands:\nmy-tweets\nspotify-this-song\nmovie-this\ndo-what-it-says");
             break;
@@ -50,6 +54,7 @@ function helpText() {
     console.log("'spotify-this-song': Displays info of a searched song from Spotify");
     console.log("'do-what-it-says': Runs command(s) from random.txt");
     console.log("'movie-this' : Gives you info on a movie (surround with quotes if multiple words in title)");
+    console.log("'history' : Shows the last 20 commands that have been entered")
     console.log("'help': Display this help text again, in case you forgot");
 }
 
@@ -75,7 +80,8 @@ function loadTweets() {
 
 function spotifySong(song) {
     var songSearch;
-
+    console.log('command: ' + command);
+    console.log('argument: ' + argument);
     if (process.argv.length < 4 && arguments.length === 0) {
         console.log('No argument given for query');
         process.exit(1);
@@ -94,7 +100,6 @@ function spotifySong(song) {
         console.log(response.tracks.items[0].artists[0].name + " - " + response.tracks.items[0].name + " || " + response.tracks.items[0].album.name + " (" + response.tracks.items[0].external_urls.spotify + ")");
     }).catch(function (error) {
         console.log('spotify query error:');
-        console.log(error);
     });
 }
 
@@ -153,7 +158,7 @@ function movieThis(arguments) {
         console.log("\n" + data.Title + " - " + data.Year);
 
         var lines = '';
-        for(var i = 0; i < data.Title.length + 8; ++i) {
+        for (var i = 0; i < data.Title.length + 8; ++i) {
             lines += '-';
         }
 
@@ -161,7 +166,7 @@ function movieThis(arguments) {
         console.log(data.Actors);
         console.log(data.Plot);
         console.log(lines);
-        console.log("IMDB Rating: " + data.Ratings[0].Value + " || Rotten Tomatoes Rating: " + ((data.Ratings.length > 1) ?  data.Ratings[1].Value : 'N/A'));
+        console.log("IMDB Rating: " + data.Ratings[0].Value + " || Rotten Tomatoes Rating: " + ((data.Ratings.length > 1) ? data.Ratings[1].Value : 'N/A'));
 
         console.log(data.Country + " - " + data.Language);
 
@@ -169,6 +174,28 @@ function movieThis(arguments) {
 
 }
 
-function logThis() {
+function history() {
+    fs.readFile("log.txt", "utf8", function (error, data) {
+        if (error) {
+            console.log('log read error');
+        }
 
+        var history = data.split(', ');
+        for (var i = history.length - 1; i > 0; --i) {
+            if (history[i] === 'movie-this' || history[i] === 'spotify-this-song') {
+                console.log(history[i] + " - " + history[i + 1]);
+            }
+            else {
+                console.log(history[i]);
+            }
+        }
+    });
+}
+
+function logThis() {
+    fs.appendFile("log.txt", command + " " + ((!argument) ? '' : argument) + "\n", function (error) {
+        if (error) {
+            return console.log(error);
+        }
+    });
 }

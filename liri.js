@@ -8,7 +8,6 @@ const Spotify = require("node-spotify-api");
 const Twitter = require("twitter");
 const keys = require("./keys.js");
 const readline = require("readline");
-const Sync = require('sync');
 
 const spotify = new Spotify(keys.spotify);
 const twitter = new Twitter(keys.twitter);

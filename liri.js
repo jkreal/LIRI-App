@@ -84,6 +84,7 @@ function loadTweets(username) {
             process.exit(1);
         }
 
+        console.log("\n");
         for (var i = 0; i < data.length; i++) {
             var date = new Date(data[i].created_at);
             console.log(moment(date).format("MM-DD-YYYY HH:mm") + " - " + data[i].text);

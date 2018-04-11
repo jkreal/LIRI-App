@@ -49,8 +49,8 @@ LIRI comes with some neat commands.
 
 ## Screenshots
 Here are some screenshots of LIRI in action!
-![Different LIRI Commands](/working.png?raw=true "LIRI 1");
-![Do what it says](/working2.png?raw = true "LIRI 2");
+![Different LIRI Commands](/LIRI-App/working.png?raw=true "LIRI 1");
+![Do what it says](/LIRI-App/working2.png?raw = true "LIRI 2");
 
 ## Authors
 jkrowden - [GitHub](https://github.com/jkrowden)

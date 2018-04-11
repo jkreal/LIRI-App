@@ -3,33 +3,32 @@ This is a Node.js app that takes in commands and arguments and logs the results 
 
 ## Installing
 Prereq: [Have node installed](https://nodejs.org/en/);
-```
-1.Clone the repo
-2.npm init -y within the root of the folder. 
-3.npm install --save [MODULE HERE]
-    a.  'twitter'
-    b.  'node-spotify-api'
-    c.  'request'
-    d.  'dotenv'
-    e.  'fs'
-    f.  'readline'
-    g.  'system-sleep'
-```
-4. You must create a .env file and provide your API keys to it. Copy and paste this code into .env and provide your keys where applicable
-```
-Spotify API keys
 
+1.Clone the repo
+
+2.'npm init -y' within the root of the folder. 
+
+3.'npm install --save' should install the modules you need
+
+4.. You must create a .env file and provide your API keys to it. Copy and paste this code into .env and provide your keys where applicable:
+
+
+
+###Spotify API keys
+```
 SPOTIFY_ID=[spotifyid]
 SPOTIFY_SECRET=[spotify-secret-code]
+```
 
-Twitter API keys
-
+###Twitter API keys
+```
 TWITTER_CONSUMER_KEY=[twitter-consumer-key]
 TWITTER_CONSUMER_SECRET=[twitter-consumer-secret]
 TWITTER_ACCESS_TOKEN_KEY=[twitter-access-token-key]
 TWITTER_ACCESS_TOKEN_SECRET=[twitter-access-token-secret]
 ```
-5. in the 'param' variable at the beginning of the 'loadTweets' function, provide your (or another person's) username.
+
+5 . in the 'param' variable at the beginning of the 'loadTweets' function, provide your (or another person's) username.
 
 You should now be able to run the program!
 
@@ -50,7 +49,7 @@ LIRI comes with some neat commands.
 ## Screenshots
 Here are some screenshots of LIRI in action!
 ![Different LIRI Commands](/LIRI-App/working.png?raw=true "LIRI 1");
-![Do what it says](/LIRI-App/working2.png?raw = true "LIRI 2");
+![Do what it says](/LIRI-App/working2.png?raw=true "LIRI 2");
 
 ## Authors
 jkrowden - [GitHub](https://github.com/jkrowden)

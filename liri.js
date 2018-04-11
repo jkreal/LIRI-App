@@ -8,6 +8,7 @@ const Spotify = require("node-spotify-api");
 const Twitter = require("twitter");
 const keys = require("./keys.js");
 const readline = require("readline");
+const asc = require("ascii-art");
 
 const spotify = new Spotify(keys.spotify);
 const twitter = new Twitter(keys.twitter);
@@ -48,6 +49,12 @@ function start() {
         case 'history':
             history();
             break;
+        case 'weather':
+            searchWeather();
+            break;
+        case 'ascii-text':
+            asciiString();
+            break;
         default:
             console.log("Command " + command + " not found. Available commands:\nmy-tweets\nspotify-this-song\nmovie-this\ndo-what-it-says");
             break;
@@ -57,6 +64,17 @@ function start() {
 
 }
 
+function asciiString(text) {
+    if (process.argv.length > 0) {
+        asc.font(text, 'Doom', function (rendered) {
+            console.log(rendered);
+        });
+    }
+    asc.font(argument, 'Doom', function (rendered) {
+        console.log(rendered);
+    });
+}
+
 function helpText() {
     console.log('\nWelcome to LIRI! We have the following commands available:');
     console.log("'my-tweets': displays your last 20 tweets from Twitter");
@@ -64,8 +82,18 @@ function helpText() {
     console.log("'spotify-this-song': Displays info of a searched song from Spotify. Parameter: song_name");
     console.log("'do-what-it-says': Runs the command(s) from random.txt");
     console.log("'movie-this' : Gives you info on a movie (surround with quotes if multiple words in title). Parameter: movie_name");
+    console.log("'ascii-text', : Prints the argument text to the console in ascii format");
     console.log("'history' : Shows the last 20 commands that have been entered")
     console.log("'help': Display this help text again, in case you forgot");
+}
+
+function searchWeather(city) {
+    city = process.argv[3];
+
+    weather.getCurrent(city, function (current) {
+        console.log(current);
+    });
+
 }
 
 function loadTweets(username) {
@@ -207,7 +235,7 @@ function history() {
         }
 
         for (var i = lines.length - 1; i > 0; --i) {
-            console.log(lineArray[i]);
+            (typeof lineArray[i] === 'undefined') ? '' : console.log(lineArray[i]);
         }
     });
 
@@ -215,7 +243,7 @@ function history() {
 
 function logThis() {
     let timestamp = moment().format("MMM-D-YYYY @ HH:mm:ss")
-    fs.appendFile("log.txt", timestamp + " >> " +  command + " " + ((!argument) ? '' : "'" + argument + "'") + "\n", function (error) {
+    fs.appendFile("log.txt", timestamp + " >> " + command + " " + ((!argument) ? '' : "'" + argument + "'") + "\n", function (error) {
         if (error) {
             return console.log(error);
         }

@@ -9,3 +9,53 @@ Mar-29-2018 @ 15:54:16 >> spotify-this-song 'love at heart blackmill'
 Mar-29-2018 @ 15:54:21 >> history 
 Mar-29-2018 @ 16:03:17 >> my-tweets 
 Mar-29-2018 @ 16:10:27 >> my-tweets 
+Mar-31-2018 @ 17:13:59 >> weather 
+Mar-31-2018 @ 17:14:40 >> weather 'slc'
+Mar-31-2018 @ 17:16:27 >> weather 'slc'
+Mar-31-2018 @ 17:16:46 >> weather 'slc'
+Mar-31-2018 @ 17:17:04 >> weather 'slc'
+Mar-31-2018 @ 17:17:24 >> weather 'slc'
+Mar-31-2018 @ 17:17:29 >> weather 'slc'
+Mar-31-2018 @ 17:17:53 >> weather 'slc'
+Mar-31-2018 @ 17:18:12 >> weather 'slc'
+Mar-31-2018 @ 17:18:32 >> weather 'slc'
+Mar-31-2018 @ 17:18:39 >> weather 'slc'
+Mar-31-2018 @ 17:18:47 >> weather 'slc'
+Mar-31-2018 @ 17:18:58 >> weather 'slc'
+Mar-31-2018 @ 17:19:07 >> weather 'slc'
+Mar-31-2018 @ 17:19:22 >> weather 'slc'
+Mar-31-2018 @ 17:20:23 >> weather 'slc'
+Mar-31-2018 @ 17:20:37 >> weather 'slc'
+Mar-31-2018 @ 17:22:23 >> weather 'slc'
+Apr-2-2018 @ 12:06:19 >> do-what-it-says 
+Apr-2-2018 @ 12:06:19 >> help 'movie-this'
+Apr-2-2018 @ 12:06:20 >> movie-this '"Breaking Bad"'
+Apr-2-2018 @ 12:06:20 >> spotify-this-song '"Never Gonna Give You Up"'
+Apr-2-2018 @ 12:06:21 >> my-tweets 'tweets'
+Apr-2-2018 @ 12:06:21 >> tweets 'BarackObama'
+Apr-2-2018 @ 12:06:23 >> history 'BarackObama'
+Apr-2-2018 @ 12:10:55 >> history 
+Apr-2-2018 @ 12:11:40 >> history 
+Apr-2-2018 @ 12:11:54 >> history 
+Apr-2-2018 @ 12:12:16 >> history 
+Apr-2-2018 @ 12:12:26 >> history 
+Apr-2-2018 @ 12:12:38 >> history 
+Apr-2-2018 @ 12:12:55 >> history 
+Apr-2-2018 @ 12:14:05 >> history 
+Apr-2-2018 @ 12:27:23 >> ascii 
+Apr-2-2018 @ 12:27:33 >> ascii 
+Apr-2-2018 @ 12:27:40 >> ascii 
+Apr-2-2018 @ 12:27:44 >> ascii 
+Apr-2-2018 @ 12:28:32 >> ascii 'hello'
+Apr-2-2018 @ 12:31:45 >> ascii 'hello'
+Apr-11-2018 @ 16:38:13 >> spotify-this-song 'Mr Brightside'
+Apr-11-2018 @ 16:38:46 >> my-tweets 
+Apr-11-2018 @ 16:39:19 >> movie-this 'Fear and Loathing in Las Vegas'
+Apr-11-2018 @ 16:39:57 >> history 
+Apr-11-2018 @ 16:41:45 >> do-what-it-says 
+Apr-11-2018 @ 16:41:45 >> help 'movie-this'
+Apr-11-2018 @ 16:41:45 >> movie-this '"Breaking Bad"'
+Apr-11-2018 @ 16:41:46 >> spotify-this-song '"Never Gonna Give You Up"'
+Apr-11-2018 @ 16:41:46 >> my-tweets 'tweets'
+Apr-11-2018 @ 16:41:47 >> tweets 'BarackObama'
+Apr-11-2018 @ 16:41:49 >> history 'BarackObama'

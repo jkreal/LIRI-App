@@ -17,12 +17,12 @@ Prereq: [Have node installed](https://nodejs.org/en/);
 ```
 4. You must create a .env file and provide your API keys to it. Copy and paste this code into .env and provide your keys where applicable
 ```
-# Spotify API keys
+Spotify API keys
 
 SPOTIFY_ID=[spotifyid]
 SPOTIFY_SECRET=[spotify-secret-code]
 
-# Twitter API keys
+Twitter API keys
 
 TWITTER_CONSUMER_KEY=[twitter-consumer-key]
 TWITTER_CONSUMER_SECRET=[twitter-consumer-secret]
@@ -46,6 +46,11 @@ LIRI comes with some neat commands.
 'help' - Displays a list of LIRI commands. No arg.
 'history' - Displays a list of the last 20 commands that were used in LIRI. No arg.
 ```
+
+## Screenshots
+Here are some screenshots of LIRI in action!
+![Different LIRI Commands](/working.png?raw=true "LIRI 1");
+![Do what it says](/working2.png?raw = true "LIRI 2");
 
 ## Authors
 jkrowden - [GitHub](https://github.com/jkrowden)

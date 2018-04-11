@@ -9,6 +9,7 @@ Mar-29-2018 @ 15:54:16 >> spotify-this-song 'love at heart blackmill'
 Mar-29-2018 @ 15:54:21 >> history 
 Mar-29-2018 @ 16:03:17 >> my-tweets 
 Mar-29-2018 @ 16:10:27 >> my-tweets 
+<<<<<<< HEAD
 Mar-31-2018 @ 17:13:59 >> weather 
 Mar-31-2018 @ 17:14:40 >> weather 'slc'
 Mar-31-2018 @ 17:16:27 >> weather 'slc'
@@ -59,3 +60,85 @@ Apr-11-2018 @ 16:41:46 >> spotify-this-song '"Never Gonna Give You Up"'
 Apr-11-2018 @ 16:41:46 >> my-tweets 'tweets'
 Apr-11-2018 @ 16:41:47 >> tweets 'BarackObama'
 Apr-11-2018 @ 16:41:49 >> history 'BarackObama'
+=======
+Mar-31-2018 @ 10:51:24 >> do-what-it-says 
+Mar-31-2018 @ 10:51:24 >> help 'movie-this'
+Mar-31-2018 @ 10:51:25 >> movie-this '"Breaking Bad"'
+Mar-31-2018 @ 10:51:25 >> spotify-this-song '"Never Gonna Give You Up"'
+Mar-31-2018 @ 10:51:26 >> my-tweets 'tweets'
+Mar-31-2018 @ 10:51:27 >> tweets 'BarackObama'
+Mar-31-2018 @ 10:51:29 >> history 'BarackObama'
+Mar-31-2018 @ 10:54:48 >> do-what-it-says 
+Mar-31-2018 @ 10:54:48 >> help 'movie-this'
+Mar-31-2018 @ 10:54:49 >> movie-this '"Breaking Bad"'
+Mar-31-2018 @ 10:54:49 >> spotify-this-song '"Never Gonna Give You Up"'
+Mar-31-2018 @ 10:54:50 >> my-tweets 'tweets'
+Mar-31-2018 @ 10:54:51 >> tweets 'BarackObama'
+Mar-31-2018 @ 10:54:53 >> history 'BarackObama'
+Mar-31-2018 @ 10:55:27 >> do-what-it-says 
+Mar-31-2018 @ 10:55:27 >> help 
+Mar-31-2018 @ 10:55:28 >> movie-this 
+Mar-31-2018 @ 10:55:45 >> history 
+Mar-31-2018 @ 10:56:20 >> do-what-it-says 
+Mar-31-2018 @ 10:56:20 >> help 'movie-this'
+Mar-31-2018 @ 10:56:21 >> movie-this '"Breaking Bad"'
+Mar-31-2018 @ 10:56:21 >> spotify-this-song '"Never Gonna Give You Up"'
+Mar-31-2018 @ 10:56:22 >> my-tweets 'tweets'
+Mar-31-2018 @ 10:56:23 >> tweets 'BarackObama'
+Mar-31-2018 @ 10:56:24 >> history 'BarackObama'
+Mar-31-2018 @ 10:56:38 >> history 
+Mar-31-2018 @ 10:56:51 >> history 
+Mar-31-2018 @ 10:57:13 >> history 
+Mar-31-2018 @ 10:57:20 >> do-what-it-says 
+Mar-31-2018 @ 10:57:20 >> help 
+Mar-31-2018 @ 10:57:21 >> movie-this 'spotify-this-song'
+Mar-31-2018 @ 10:57:21 >> spotify-this-song 'my-tweets'
+Mar-31-2018 @ 10:57:22 >> my-tweets 'my-tweets'
+Mar-31-2018 @ 10:57:28 >> tweets 'history'
+Mar-31-2018 @ 10:58:04 >> do-what-it-says 
+Mar-31-2018 @ 10:58:04 >> help 
+Mar-31-2018 @ 10:58:05 >> movie-this 'spotify-this-song'
+Mar-31-2018 @ 10:58:06 >> spotify-this-song 'my-tweets'
+Mar-31-2018 @ 10:58:06 >> my-tweets 'my-tweets'
+Mar-31-2018 @ 10:58:12 >> tweets 'history'
+Mar-31-2018 @ 10:58:27 >> history 
+Mar-31-2018 @ 10:59:12 >> tweets 
+Mar-31-2018 @ 11:00:10 >> tweets 
+Mar-31-2018 @ 11:00:19 >> do-what-it-says 
+Mar-31-2018 @ 11:00:19 >> help 'movie-this'
+Mar-31-2018 @ 11:00:19 >> movie-this 'spotify-this-song'
+Mar-31-2018 @ 11:00:20 >> spotify-this-song 'my-tweets'
+Mar-31-2018 @ 11:00:20 >> my-tweets 'tweets'
+Mar-31-2018 @ 11:00:22 >> tweets 'history'
+Mar-31-2018 @ 11:00:23 >> history 
+Mar-31-2018 @ 11:00:53 >> do-what-it-says 
+Mar-31-2018 @ 11:00:53 >> help 'movie-this'
+Mar-31-2018 @ 11:00:54 >> movie-this '"Breaking Bad"'
+Mar-31-2018 @ 11:00:54 >> spotify-this-song '"Never Gonna Give You Up"'
+Mar-31-2018 @ 11:00:55 >> my-tweets 'tweets'
+Mar-31-2018 @ 11:00:56 >> tweets 'BarackObama'
+Mar-31-2018 @ 11:00:57 >> history 'BarackObama'
+Mar-31-2018 @ 11:02:08 >> do-what-it-says 
+Mar-31-2018 @ 11:02:08 >> help 'movie-this'
+Mar-31-2018 @ 11:02:09 >> movie-this '"Breaking Bad"'
+Mar-31-2018 @ 11:02:09 >> spotify-this-song '"Never Gonna Give You Up"'
+Mar-31-2018 @ 11:02:10 >> my-tweets 'tweets'
+Mar-31-2018 @ 11:02:11 >> tweets 'BarackObama'
+Mar-31-2018 @ 11:02:13 >> history 'BarackObama'
+Mar-31-2018 @ 11:02:37 >> history 
+Mar-31-2018 @ 11:03:03 >> history 
+Mar-31-2018 @ 11:03:48 >> history 
+Mar-31-2018 @ 11:04:02 >> history 
+Mar-31-2018 @ 11:04:39 >> history 
+Mar-31-2018 @ 11:04:46 >> history 
+Mar-31-2018 @ 11:05:33 >> history 
+Mar-31-2018 @ 11:05:36 >> history 
+Mar-31-2018 @ 11:05:54 >> history 
+Mar-31-2018 @ 11:06:22 >> history 
+Mar-31-2018 @ 11:06:30 >> history 
+Mar-31-2018 @ 11:07:57 >> history 
+Mar-31-2018 @ 11:09:53 >> history 
+Mar-31-2018 @ 11:10:17 >> history 
+Mar-31-2018 @ 11:10:27 >> history 
+Mar-31-2018 @ 11:10:49 >> history 
+>>>>>>> 0e3941fe55a611d5821c18b0f1ffa0c0f9ea4f5c
